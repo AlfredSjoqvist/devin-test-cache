@@ -11,6 +11,7 @@ class Node:
     key: Any
     value: Any
     expires_at: Optional[float]
+    size: int = 0
     prev: Optional["Node"] = None
     next: Optional["Node"] = None
 
@@ -59,6 +60,9 @@ class DoublyLinkedList:
         node = self._tail
         self.remove(node)
         return node
+
+    def peek_tail(self) -> Optional[Node]:
+        return self._tail
 
     def clear(self) -> None:
         self._head = None
