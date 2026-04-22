@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devin-test-cache"
+version = "0.1.0"
+description = "Small in-memory LRU cache with TTL."
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.setuptools.package-dir]
+devin_cache = "src"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
